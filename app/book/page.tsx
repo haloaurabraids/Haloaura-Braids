@@ -46,6 +46,7 @@ function BookingWizard() {
       const match = SERVICES.find(s => s.id === serviceParam);
       if (match) {
         setSelectedService(match);
+        setSelectedOption(match.options && match.options.length > 0 ? match.options[0] : null);
         setActiveCategory(match.category);
         setStep(2); // Auto-jump to options
       }

@@ -69,7 +69,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-muted-foreground text-sm sm:text-base max-w-xl mx-auto leading-relaxed"
             >
-              Have questions about our premium styles, custom braiding options, or scheduling private boutique sessions? Visit our Florida studio.
+              Have questions about our premium styles, custom braiding options, or scheduling private boutique sessions? Visit our Worcester studio.
             </motion.p>
           </div>
         </section>
@@ -86,7 +86,7 @@ export default function ContactPage() {
             >
               {/* Email Card */}
               <motion.a 
-                href="mailto:hello@haloaura.com"
+                href="mailto:contact@haloaurabraids.com"
                 variants={cardVariants}
                 whileHover="hover"
                 className="group bg-accent/40 dark:bg-muted/20 border border-border/80 rounded-3xl p-8 flex flex-col items-center text-center shadow-sm relative overflow-hidden transition-colors duration-300 w-full"
@@ -96,7 +96,7 @@ export default function ContactPage() {
                   <Mail className="w-6 h-6" />
                 </div>
                 <h3 className="font-serif font-bold text-xl mb-2 text-foreground">Email Us</h3>
-                <p className="text-sm font-semibold text-primary mb-1">hello@haloaura.com</p>
+                <p className="text-sm font-semibold text-primary mb-1">contact@haloaurabraids.com</p>
                 <p className="text-xs text-muted-foreground max-w-[320px] mt-2 leading-relaxed">
                   Drop us a line anytime. We respond within 24 business hours.
                 </p>
@@ -107,7 +107,7 @@ export default function ContactPage() {
 
               {/* Phone Card */}
               <motion.a 
-                href="tel:+19545550199"
+                href="tel:+15086653209"
                 variants={cardVariants}
                 whileHover="hover"
                 className="group bg-accent/40 dark:bg-muted/20 border border-border/80 rounded-3xl p-8 flex flex-col items-center text-center shadow-sm relative overflow-hidden transition-colors duration-300 w-full"
@@ -117,7 +117,7 @@ export default function ContactPage() {
                   <Phone className="w-6 h-6" />
                 </div>
                 <h3 className="font-serif font-bold text-xl mb-2 text-foreground">Call Us</h3>
-                <p className="text-sm font-semibold text-primary mb-1">+1 (954) 555-0199</p>
+                <p className="text-sm font-semibold text-primary mb-1">+1 (508) 665-3209</p>
                 <p className="text-xs text-muted-foreground max-w-[320px] mt-2 leading-relaxed">
                   Mon – Sat: 9:00 AM – 5:00 PM EST. Sunday Closed.
                 </p>
@@ -128,7 +128,7 @@ export default function ContactPage() {
 
               {/* Location Card */}
               <motion.a 
-                href="https://maps.google.com/?q=100+E+Las+Olas+Blvd,+Fort+Lauderdale,+FL+33301"
+                href="https://maps.google.com/?q=12+R+winter+street+Worcester+MA+01604"
                 target="_blank"
                 rel="noopener noreferrer"
                 variants={cardVariants}
@@ -140,10 +140,10 @@ export default function ContactPage() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <h3 className="font-serif font-bold text-xl mb-2 text-foreground">Visit Studio</h3>
-                <p className="text-sm font-semibold text-primary mb-1">Las Olas District</p>
+                <p className="text-sm font-semibold text-primary mb-1">Worcester Studio</p>
                 <p className="text-xs text-muted-foreground max-w-[320px] mt-2 leading-relaxed">
-                  100 E Las Olas Blvd, Suite 1400<br />
-                  Fort Lauderdale, FL 33301
+                  12 R winter street<br />
+                  Worcester, MA 01604
                 </p>
                 <span className="mt-6 inline-flex items-center gap-1 text-xs font-bold text-secondary hover:text-primary transition-colors">
                   Get Directions <Compass className="w-3 h-3" />
@@ -159,7 +159,7 @@ export default function ContactPage() {
             <div className="space-y-6 mb-8 text-center md:text-left">
               <h2 className="text-3xl font-serif font-bold text-foreground">Our Location</h2>
               <p className="text-sm text-muted-foreground max-w-lg">
-                Find us inside the signature Las Olas Business Tower. Centrally located with secure parking validation provided for clients.
+                Find us at our boutique studio in Worcester. Centrally located with parking available for clients.
               </p>
             </div>
 
@@ -172,8 +172,8 @@ export default function ContactPage() {
             >
               {/* Map Iframe */}
               <iframe 
-                title="Haloaura Florida Boutique Location Map"
-                src="https://maps.google.com/maps?q=100%20E%20Las%20Olas%20Blvd,%20Fort%20Lauderdale,%20FL%2033301&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Haloaura Worcester Boutique Location Map"
+                src="https://maps.google.com/maps?q=12%20R%20winter%20street%20Worcester%20MA%2001604&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 className="w-full h-full border-0"
                 allowFullScreen
                 loading="lazy"

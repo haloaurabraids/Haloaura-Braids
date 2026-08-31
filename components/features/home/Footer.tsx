@@ -43,9 +43,9 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="text-sm font-semibold uppercase tracking-wider text-secondary">Contact</h4>
             <ul className="space-y-2 text-xs text-zinc-400">
-              <li className="flex items-center gap-2"><MapPin className="w-3.5 h-3.5 text-primary" /> Atlanta, GA 30309</li>
-              <li className="flex items-center gap-2"><Phone className="w-3.5 h-3.5 text-primary" /> (555) 123-4567</li>
-              <li className="flex items-center gap-2"><Mail className="w-3.5 h-3.5 text-primary" /> hello@haloaura.com</li>
+              <li className="flex items-center gap-2"><MapPin className="w-3.5 h-3.5 text-primary" /> 12 R winter street Worcester MA 01604</li>
+              <li className="flex items-center gap-2"><Phone className="w-3.5 h-3.5 text-primary" /> +1 (508) 665-3209</li>
+              <li className="flex items-center gap-2"><Mail className="w-3.5 h-3.5 text-primary" /> contact@haloaurabraids.com</li>
             </ul>
           </div>
 

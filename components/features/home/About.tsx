@@ -27,7 +27,7 @@ export function About() {
               {/* Image Frame */}
               <div className="w-full h-full overflow-hidden rounded-[2rem] shadow-xl border-4 border-white dark:border-zinc-900 bg-background-alt relative">
                 <Image 
-                  src="/images/about_braids.jpg"
+                  src="/images/about_braids.jpeg"
                   alt="Stylist working on beautiful hair braids"
                   fill
                   className="object-cover"

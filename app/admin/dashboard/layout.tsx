@@ -69,7 +69,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         </div>
         {!isCollapsed && (
           <span className="text-xl font-bold tracking-tight bg-gradient-to-br from-zinc-800 to-zinc-500 dark:from-white dark:to-zinc-400 bg-clip-text text-transparent truncate transition-all">
-            SalonAdmin
+            Haloaura Braids
           </span>
         )}
       </div>
