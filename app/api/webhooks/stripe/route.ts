@@ -97,16 +97,7 @@ export async function POST(req: Request) {
 
           // Send confirmation emails
           const booking = payment.booking;
-          const formattedDate = booking.date.toLocaleDateString("en-US", { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-          
-          await sendBookingConfirmationEmail(
-            booking.contact.email,
-            `${booking.contact.firstName} ${booking.contact.lastName}`,
-            booking.serviceName,
-            formattedDate,
-            booking.startTime,
-            booking.totalPrice
-          );
+          await sendBookingConfirmationEmail(booking);
           
           console.log(`Payment succeeded for booking ${bookingId} and emails sent.`);
         }
