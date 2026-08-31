@@ -1,0 +1,99 @@
+import { NextResponse } from "next/server";
+import { prisma } from "@/lib/prisma";
+import { BookingStatus, PaymentStatus, PaymentMethod } from "@prisma/client";
+import Stripe from "stripe";
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "sk_test_dummy", {
+  apiVersion: "2026-06-24.dahlia", // Use latest API version or your preferred one
+});
+
+export async function POST(req: Request) {
+  try {
+    const body = await req.json();
+    const { service, date, startTime, firstName, lastName, email, phone, notes } = body;
+
+    if (!service || !date || !startTime || !firstName || !lastName || !email || !phone) {
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
+    const bookingDate = new Date(date);
+    bookingDate.setHours(0, 0, 0, 0);
+
+    const price = Number(service.price) || 0;
+
+    // 1. Create or Update Contact
+    const contact = await prisma.contact.upsert({
+      where: { email },
+      update: {
+        firstName,
+        lastName,
+        phone,
+      },
+      create: {
+        firstName,
+        lastName,
+        email,
+        phone,
+      }
+    });
+
+    // 2. Create Booking and Payment
+    const [startH, startM] = startTime.split(":");
+    const endH = parseInt(startH) + 1;
+    const endTime = `${endH.toString().padStart(2, "0")}:${startM}`;
+
+    const newBooking = await prisma.booking.create({
+      data: {
+        date: bookingDate,
+        startTime,
+        endTime,
+        status: BookingStatus.PENDING,
+        totalPrice: price,
+        customerNotes: notes,
+        serviceName: service.name,
+        contactId: contact.id,
+        payment: {
+          create: {
+            amount: 30,
+            currency: "USD",
+            status: PaymentStatus.PENDING,
+            method: PaymentMethod.CARD,
+          }
+        }
+      },
+      include: {
+        payment: true,
+      }
+    });
+
+    // 3. Create Stripe PaymentIntent for $30 deposit
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: 3000, // Exactly $30.00 in cents
+      currency: "usd",
+      automatic_payment_methods: { enabled: true },
+      metadata: {
+        bookingId: newBooking.id,
+        contactId: contact.id,
+      },
+    });
+
+    // Update the payment record with the PaymentIntent ID
+    if (newBooking.payment) {
+      await prisma.payment.update({
+        where: { id: newBooking.payment.id },
+        data: {
+          stripePaymentIntentId: paymentIntent.id,
+        },
+      });
+    }
+
+    return NextResponse.json({ 
+      success: true, 
+      data: newBooking,
+      clientSecret: paymentIntent.client_secret,
+    });
+  } catch (error) {
+    console.error("Booking API Error:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
+}
