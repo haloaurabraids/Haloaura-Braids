@@ -41,15 +41,6 @@ export function PaymentsTable({ data, onView }: PaymentsTableProps) {
     data,
     columns: [
       {
-        accessorKey: "transactionId",
-        header: "Transaction ID",
-        cell: ({ row }) => (
-          <span className="font-medium text-zinc-900 dark:text-zinc-100">
-            {row.original.transactionId || row.original.id}
-          </span>
-        ),
-      },
-      {
         accessorKey: "booking.contact.firstName",
         header: "Customer",
         cell: ({ row }) => (
@@ -124,15 +115,16 @@ export function PaymentsTable({ data, onView }: PaymentsTableProps) {
       },
       {
         id: "actions",
+        header: "Action",
         cell: ({ row }) => (
           <Button
             variant="ghost"
             size="sm"
             onClick={() => onView(row.original)}
-            className="h-8 w-8 p-0 text-blue-500 hover:text-blue-600 hover:bg-blue-50 dark:hover:bg-blue-500/10"
+            className="h-8 px-2.5 text-primary hover:text-primary-dark hover:bg-primary/10 font-medium text-xs flex items-center gap-1.5 cursor-pointer"
           >
-            <span className="sr-only">View Details</span>
-            <Eye className="h-4 w-4" />
+            <Eye className="h-3.5 w-3.5" />
+            <span>View</span>
           </Button>
         ),
       },
@@ -195,7 +187,7 @@ export function PaymentsTable({ data, onView }: PaymentsTableProps) {
               ))
             ) : (
               <TableRow>
-                <TableCell colSpan={8} className="h-24 text-center text-zinc-500">
+                <TableCell colSpan={7} className="h-24 text-center text-zinc-500">
                   No results.
                 </TableCell>
               </TableRow>

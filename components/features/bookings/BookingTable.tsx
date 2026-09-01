@@ -16,7 +16,6 @@ import {
 } from "@tanstack/react-table";
 import { Booking } from "@/types/booking";
 import { BookingStatusBadge } from "./BookingStatusBadge";
-import { PaymentStatusBadge } from "./PaymentStatusBadge";
 import { BookingActions } from "./BookingActions";
 import { format, parseISO } from "date-fns";
 
@@ -30,11 +29,6 @@ interface BookingTableProps {
 
 export function BookingTable({ data, loading = false, onView, onUpdateStatus, onDelete }: BookingTableProps) {
   const columns: ColumnDef<Booking>[] = [
-    {
-      accessorKey: "id",
-      header: "Booking ID",
-      cell: ({ row }) => <span className="font-medium">{row.original.id}</span>,
-    },
     {
       accessorKey: "customer",
       header: "Customer",
@@ -72,11 +66,6 @@ export function BookingTable({ data, loading = false, onView, onUpdateStatus, on
       cell: ({ row }) => `$${row.original.price.toFixed(2)}`,
     },
     {
-      accessorKey: "paymentStatus",
-      header: "Payment",
-      cell: ({ row }) => <PaymentStatusBadge status={row.original.paymentStatus} />,
-    },
-    {
       accessorKey: "bookingStatus",
       header: "Status",
       cell: ({ row }) => <BookingStatusBadge status={row.original.bookingStatus} />,
@@ -112,7 +101,7 @@ export function BookingTable({ data, loading = false, onView, onUpdateStatus, on
       <div className="md:hidden space-y-4">
         {loading ? (
           <div className="flex justify-center items-center py-12">
-            <div className="animate-spin h-8 w-8 border-4 border-purple-500 border-t-transparent rounded-full" />
+            <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full" />
           </div>
         ) : data.length > 0 ? (
           data.map((booking) => (
@@ -123,7 +112,7 @@ export function BookingTable({ data, loading = false, onView, onUpdateStatus, on
               <div className="flex justify-between items-start">
                 <div>
                   <p className="font-semibold text-zinc-900 dark:text-zinc-100">{booking.customer.name}</p>
-                  <p className="text-xs text-zinc-500">{booking.id} • {booking.customer.phone}</p>
+                  <p className="text-xs text-zinc-500">{booking.customer.phone}</p>
                 </div>
                 <BookingActions
                   booking={booking}
@@ -149,7 +138,6 @@ export function BookingTable({ data, loading = false, onView, onUpdateStatus, on
                   <p className="font-medium">${booking.price.toFixed(2)}</p>
                 </div>
                 <div className="flex flex-col gap-1 items-start">
-                  <PaymentStatusBadge status={booking.paymentStatus} />
                   <BookingStatusBadge status={booking.bookingStatus} />
                 </div>
               </div>
@@ -194,7 +182,7 @@ export function BookingTable({ data, loading = false, onView, onUpdateStatus, on
               <TableRow>
                 <TableCell colSpan={columns.length} className="h-64 text-center">
                   <div className="flex justify-center items-center">
-                    <div className="animate-spin h-8 w-8 border-4 border-purple-500 border-t-transparent rounded-full" />
+                    <div className="animate-spin h-8 w-8 border-4 border-primary border-t-transparent rounded-full" />
                   </div>
                 </TableCell>
               </TableRow>
