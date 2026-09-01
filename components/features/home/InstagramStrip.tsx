@@ -24,7 +24,7 @@ const SOCIAL_CHANNELS = [
     name: "TikTok",
     handle: "@Haloaura.Braids",
     desc: "Watch our satisfying stitch braid transitions, hair prep tutorials, and quick protective style guides.",
-    url: "https://tiktok.com",
+    url: "https://www.tiktok.com/@haloaurabraids",
     icon: TikTokIcon,
     cta: "Follow TikTok"
   },

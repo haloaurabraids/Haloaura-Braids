@@ -9,56 +9,56 @@ const SERVICES = [
   {
     id: "knotless-braids",
     name: "Knotless Braids",
-    price: "220",
+    price: "150",
     duration: "5 hrs",
     description: "Lightweight, pain-free protective style that starts smoothly at the roots for a natural growth look."
   },
   {
     id: "boho-knotless-braids",
     name: "Boho Knotless Braids",
-    price: "250",
+    price: "190",
     duration: "4.5 hrs",
     description: "Knotless braids layered with curly curls for a voluminous bohemian look."
   },
   {
     id: "stitch-braids-attachment",
     name: "Stitch Braids — With Attachment",
-    price: "140",
+    price: "70",
     duration: "3 hrs",
     description: "Clean feed-in stitches using hair extensions for extra length and volume."
   },
   {
     id: "stitch-braids-natural",
     name: "Stitch Braids — Natural Hair Only",
-    price: "90",
+    price: "45",
     duration: "2 hrs",
     description: "Precision scalp stitch braid styles crafted using only your natural hair."
   },
   {
     id: "lemonade-braids",
     name: "Lemonade Braids",
-    price: "150",
+    price: "140",
     duration: "3.5 hrs",
     description: "Side-swept, neat protective feed-in braids styled into elegant side cascades."
   },
   {
     id: "fulani-braids",
     name: "Fulani Braids",
-    price: "180",
+    price: "160",
     duration: "4 hrs",
     description: "Intricate cornrows in the front combined with box braids or twists in the back."
   },
   {
     id: "tribal-braids",
     name: "Tribal Braids",
-    price: "200",
+    price: "170",
     duration: "4 hrs",
     description: "Two-layer cornrow patterns inspired by traditional African heritage designs."
   },
   {
     id: "boho-goddess-braids",
     name: "Boho / Goddess Braids",
-    price: "260",
+    price: "180",
     duration: "5 hrs",
     description: "Sleek box braids with loose, wavy extensions for a soft goddess-like finish."
   }
