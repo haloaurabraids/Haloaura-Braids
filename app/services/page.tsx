@@ -59,7 +59,7 @@ const MAIN_SERVICES = [
     id: "fulani-braids",
     name: "Fulani Braids",
     price: 160,
-    image: "/gallary/half-fulani.jpeg", // Add image path here
+    image: "/gallary/fulani-boho-braids.jpeg", // Add image path here
     description: "Traditional Fulani-inspired layouts featuring a signature feed-in cornrow pattern down the center, side braids with beads options, and single box braids styled transitionally in the back portion.",
     features: ["Intricate tribal patterns", "Box braids in the back", "Lasts 6 to 8 weeks", "Accessorize-ready design"],
     bookingId: "fulani-braids"
@@ -122,7 +122,7 @@ const MAIN_SERVICES = [
     id: "sisterlocks",
     name: "Sisterlocks",
     price: 150,
-    image: "", // Add image path here
+    image: "/gallary/sister_lock.jpeg", // Add image path here
     description: "Official micro-interlocking natural hair locking system. Covers mandatory pre-installation grid consultations, symmetric micro-grid starter installations, and regular root retightening maintenance.",
     features: ["Micro-interlocking grid", "Installation & retightening", "Scalp health preservation", "Requires consultation"],
     bookingId: "sisterlocks-installation"

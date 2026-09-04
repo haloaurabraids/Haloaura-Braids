@@ -12,7 +12,7 @@ const GALLERY = [
   { src: "/gallary/crochet.jpeg", title: "Premium Crochet Installation" },
   { src: "/gallary/freestyle-stitch-braid.jpeg", title: "Freestyle Stitch Braids" },
   { src: "/gallary/fulani-boho-braids.jpeg", title: "Fulani Boho Braids" },
-  { src: "/gallary/half-fulani.jpeg", title: "Elegant Half Fulani Styling" },
+  { src: "/gallary/sister_lock.jpeg", title: "Sister Lock Style" },
   { src: "/gallary/regular-braids.jpeg", title: "Traditional Symmetrical Braids" }
 ];
 

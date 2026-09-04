@@ -133,7 +133,7 @@ export function Hero() {
                 }}
               >
                 <Image
-                  src="/images/hero_braids.jpg"
+                  src="/images/hero_1.jpeg"
                   alt="Premium braids styling portrait"
                   fill
                   sizes="(max-w-640px) 60vw, (max-w-1024px) 40vw, 30vw"
@@ -159,7 +159,7 @@ export function Hero() {
                 }}
               >
                 <Image
-                  src="/images/knotless_braids.jpg"
+                  src="/images/hero_2.jpeg"
                   alt="Intricate braid details"
                   fill
                   sizes="(max-w-640px) 50vw, (max-w-1024px) 35vw, 25vw"
